@@ -11,11 +11,19 @@
 
 #ifdef DISPLAY_CLASS
 #include <helpers/ui/MomentaryButton.h>
-#ifdef HELTEC_T114_WITH_DISPLAY
+
+#ifdef HELTEC_T114_WITH_DISPLAY_SSD1309
+#include <helpers/ui/SSD1306Display.h>
+#else
+#include "helpers/ui/NullDisplayDriver.h"
+#endif
+
+#ifdef HELTEC_T114_WITH_DISPLAY_ST7789
 #include <helpers/ui/ST7789Display.h>
 #else
 #include "helpers/ui/NullDisplayDriver.h"
 #endif
+
 #endif
 
 extern T114Board board;
