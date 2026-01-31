@@ -19,6 +19,16 @@ bool SSD1306Display::begin() {
 
 void SSD1306Display::turnOn() {
   display.ssd1306_command(SSD1306_DISPLAYON);
+
+  display.ssd1306_command(SSD1306_SETCONTRAST);
+  display.ssd1306_command(0x01);
+
+  display.ssd1306_command(0xD9);
+  display.ssd1306_command(0x05);
+
+  display.ssd1306_command(0xDB);
+  display.ssd1306_command(0x00);
+
   if (!_isOn) {
     if (_peripher_power) _peripher_power->claim();
     _isOn = true;
