@@ -18,6 +18,7 @@ bool SSD1306Display::begin() {
 }
 
 void SSD1306Display::turnOn() {
+  display.ssd1306_command(SSD1306_DISPLAYON);
   if (!_isOn) {
     if (_peripher_power) _peripher_power->claim();
     _isOn = true;  // set before begin() to prevent double claim

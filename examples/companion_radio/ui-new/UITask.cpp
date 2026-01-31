@@ -31,7 +31,7 @@
 
 #include "icons.h"
 
-bool wakeOnNewMessage = false
+static bool wakeOnMessage = false;
 
 class SplashScreen : public UIScreen {
   UITask* _task;
@@ -39,6 +39,7 @@ class SplashScreen : public UIScreen {
   char _version_info[12];
 
 public:
+
   SplashScreen(UITask* task) : _task(task) {
     // strip off dash and commit hash by changing dash to null terminator
     // e.g: v1.2.3-abcdef -> v1.2.3
@@ -625,7 +626,7 @@ void UITask::newMsg(uint8_t path_len, const char* from_name, const char* text, i
   setCurrScreen(msg_preview);
 
   if (_display != NULL) {
-    if (!_display->isOn() && !hasConnection() && wakeOnNewMessage) {
+    if (!_display->isOn() && !hasConnection() && wakeOnMessage) {
       _display->turnOn();
     }
 
