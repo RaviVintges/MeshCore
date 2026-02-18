@@ -58,8 +58,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 // I2C pin definition
 
-#define PIN_WIRE_SDA            (26) // P0.26
-#define PIN_WIRE_SCL            (27) // P0.27
+#define PIN_WIRE_SDA            (16) // P0.26
+#define PIN_WIRE_SCL            (13) // P0.27
 
 #define PIN_WIRE1_SDA            (7) // P0.8
 #define PIN_WIRE1_SCL            (8) // P0.7
