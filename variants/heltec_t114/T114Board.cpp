@@ -39,6 +39,10 @@ void T114Board::begin() {
   digitalWrite(8, LOW);
   delay(10);
 
+  pinMode(8, OUTPUT);
+  digitalWrite(8, LOW);
+  delay(10);
+
   pinMode(PIN_VBAT_READ, INPUT);
 
 #if defined(PIN_BOARD_SDA) && defined(PIN_BOARD_SCL)
